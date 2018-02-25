@@ -1,6 +1,6 @@
 walking_speed = 1
 normal_speed = 2
-running_speed = 6
+running_speed = 10
 
 spd = normal_speed
 
@@ -10,9 +10,17 @@ yFrame = 9
 xOffset = sprite_get_xoffset(mask_index) //mask index is the currently assigned sprite mask
 yOffset = sprite_get_yoffset(mask_index)
 
-sprBase = spr_base_male_4
-sprShoes = spr_male_shoes_brown
-sprPants = spr_male_pants_green
-sprShirt = spr_male_shirt_white
-sprHair = spr_male_messy_raven
+sprBase = -1
+sprShoes = -1
+sprPants = -1
+sprShirt = -1
+sprHair = -1
 sprShadow = spr_character_shadow
+
+moveX = 0
+moveY = 0
+
+spd = walking_speed
+
+//call alarm 1 right away
+alarm[1] = 1

@@ -18,16 +18,8 @@ if(moveX < 0) {
 var xx = x - xOffset
 var yy = y - yOffset
 
-var nextAnimation = animLength / 60 //fps
-//increment frame for animation
-if(xFrame + nextAnimation < animLength) {
-	xFrame += nextAnimation 
-} else {
-	xFrame = 0;
-}
-
 //draw char shadow first!
-if(sprShadow != -1) draw_sprite(sprShadow, 0, x, y)
+if(sprShadow != -1) draw_sprite(spr_character_shadow, 0, x, y)
 
 //draw character base
 if(sprBase != -1) draw_sprite_part(sprBase, 0, floor(xFrame) * frameSize, yFrame * frameSize, frameSize, frameSize, xx, yy)
@@ -43,3 +35,10 @@ if(sprShirt != -1) draw_sprite_part(sprShirt, 0, floor(xFrame) * frameSize, yFra
 
 //draw hair
 if(sprHair != -1) draw_sprite_part(sprHair, 0, floor(xFrame) * frameSize, yFrame * frameSize, frameSize, frameSize, xx, yy)
+
+//increment frame for animation
+if(xFrame < animLength - 1) {
+	xFrame += animSpeed / 60 //fps
+} else {
+	xFrame = 0;
+}

@@ -1,23 +1,5 @@
-input_left		= keyboard_check(vk_left)
-input_right		= keyboard_check(vk_right)
-input_up		= keyboard_check(vk_up)
-input_down		= keyboard_check(vk_down)
-input_walk		= keyboard_check(vk_control)
-input_run		= keyboard_check(vk_shift)
 
 
-if(input_walk || input_run) {
-	spd = abs((input_walk * walking_speed) - (input_run * running_speed))	
-} else {
-	spd = normal_speed	
-}
-
-moveX = 0
-moveY = 0
-
-//only allow one way movement
-moveX = (input_right - input_left) * spd
-if(moveX == 0) moveY = (input_down - input_up) * spd
 
 if(place_meeting(x + moveX, y, obj_collision)) {
 	repeat(abs(moveX)) {
@@ -48,3 +30,5 @@ y += moveY
 
 //actually move our player horizontally
 x += moveX;
+
+
