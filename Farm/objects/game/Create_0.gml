@@ -13,6 +13,8 @@ spawnX = 0
 spawnY = 0
 spawnPlayerFacing = -1
 
+debugMode = false
+
 enum dir {
 	right = 0,
 	up = 90,

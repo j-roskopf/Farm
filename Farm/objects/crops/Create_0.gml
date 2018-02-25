@@ -1,5 +1,5 @@
 ds_crops_type = 0
-
+ds_crops_instances = 0
 enum crop {
 	tomato,
 	potato,
@@ -23,3 +23,5 @@ selectCrop = 0
 
 mx = 0
 my = 0
+
+cellSize = 32
