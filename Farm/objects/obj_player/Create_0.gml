@@ -16,3 +16,5 @@ sprPants = spr_male_pants_green
 sprShirt = spr_male_shirt_white
 sprHair = spr_male_messy_raven
 sprShadow = spr_character_shadow
+
+facing = 0

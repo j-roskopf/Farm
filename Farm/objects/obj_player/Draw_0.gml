@@ -2,17 +2,12 @@ var animLength = 9
 var frameSize = 64
 var animSpeed = 12
 
-
-if(moveX < 0) {
-	yFrame = 9	
-} else if(moveX > 0) {
-	yFrame = 11	
-} else if(moveY < 0) {
-	yFrame = 8	
-} else if(moveY > 0) {
-	yFrame = 10	
-} else {
-	xFrame = 0
+switch(facing) {
+	case dir.left:	yFrame = 9	break
+	case dir.right: yFrame = 11 break
+	case dir.up:	yFrame = 8	break
+	case dir.down:	yFrame = 10 break
+	case -1:		xFrame = 0
 }
 
 var xx = x - xOffset
