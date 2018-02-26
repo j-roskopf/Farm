@@ -1,5 +1,6 @@
-ds_crops_type = 0
-ds_crops_instances = 0
+ds_crops_type = -1
+ds_crops_instances = -1
+
 enum crop {
 	tomato,
 	potato,
