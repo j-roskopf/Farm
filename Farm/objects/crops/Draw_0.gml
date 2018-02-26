@@ -1,4 +1,4 @@
-if(!plantingMode) exit
+if(!plantingMode or !ds_exists(ds_crops_instances, ds_type_grid)) { exit }
 
 var gx = mx div cellSize
 var gy = my div cellSize

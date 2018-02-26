@@ -31,7 +31,7 @@ if(data == 0) {
 
 //create the instance
 var idOfCrop = instance_create_layer(xx + (cs / 2), yy + (cs / 2), "Instances", obj_crop)
-grid[# gx, gy] = idOfCrop
+ds_crops_instances[# gx, gy] = idOfCrop
 
 //give charactersistics
 with(idOfCrop) {
