@@ -199,6 +199,14 @@
             }
         },
         {
+            "Key": "2475f4f8-afa1-4570-bd08-8434dc5c0b6a",
+            "Value": {
+                "id": "f1523537-2aa8-4c01-80c3-2d7cba6ee819",
+                "resourcePath": "scripts\\collisionDetection\\collisionDetection.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "33d8f8eb-3ea3-4ca7-b677-cecb0b54fb79",
             "Value": {
                 "id": "f88421be-d48b-4ec7-917d-cfa6a9e55310",
@@ -319,6 +327,14 @@
             }
         },
         {
+            "Key": "4f49e6d4-0f2d-40d3-b3b2-1e564f5b7517",
+            "Value": {
+                "id": "da5ff8ab-d933-466a-afde-ef76b1ee4ea4",
+                "resourcePath": "objects\\par_depth_object\\par_depth_object.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "53fc2816-a6ea-4b9c-afd4-b7a0a03c1176",
             "Value": {
                 "id": "34dceaa9-6fdb-4ebc-ac92-68779a3b89bf",
@@ -351,6 +367,14 @@
             }
         },
         {
+            "Key": "6177dac1-e9f4-43ab-bb1c-70eb30a0896b",
+            "Value": {
+                "id": "83e21ad8-3e5a-417d-bc78-e43e2ad78a67",
+                "resourcePath": "views\\6177dac1-e9f4-43ab-bb1c-70eb30a0896b.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "6bc3aa83-10b4-4f42-90d4-9dbc3c1b9b65",
             "Value": {
                 "id": "b8918136-f9ee-4df4-9472-4a7e3890497f",
@@ -380,6 +404,14 @@
                 "id": "fea3a330-2b55-4f92-b594-040213c564d8",
                 "resourcePath": "views\/6e131bc2-7d4c-420b-9360-c8154f1e185d.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "741328f9-62d6-4e04-bca1-e8aa0f862d6f",
+            "Value": {
+                "id": "70ffb252-f202-4b50-b78a-539f8dcf5d0a",
+                "resourcePath": "objects\\depthSorter\\depthSorter.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -797,7 +829,8 @@
         "53fc2816-a6ea-4b9c-afd4-b7a0a03c1176",
         "6c788365-783e-4bbf-9ef7-089ecb537dec",
         "917eeba5-e3cf-46a1-9d78-e9da0d38869f",
-        "11c3c801-414a-4664-af8a-cf466cdbcb4a"
+        "11c3c801-414a-4664-af8a-cf466cdbcb4a",
+        "2475f4f8-afa1-4570-bd08-8434dc5c0b6a"
     ],
     "tutorial": ""
 }

@@ -1,3 +1,5 @@
+event_inherited()
+
 walking_speed = 1
 normal_speed = 2
 running_speed = 10
