@@ -14,8 +14,11 @@ var yy = 0; with(par_depth_object) {
 	yy += 1
 }
 
-//sort the grid ascending order
-ds_grid_sort(grid, 1, true)
+if(ds_grid_height(ds_depthGrid) != numberOfInstances) {
+	//sort the grid ascending order
+	ds_grid_sort(grid, 1, true)
+}
+
 
 //loop through grid and draw all items
 var currentID; var yy = 0; repeat(numberOfInstances) {

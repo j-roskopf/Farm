@@ -1,3 +1,5 @@
+if(room != room_farm) { plantingMode = false; exit; }
+
 #region Planting
 if(keyboard_check_pressed(ord("P"))) {
 	plantingMode = !plantingMode
@@ -24,9 +26,3 @@ if(plantingMode) {
 	}
 }
 #endregion
-
-if(instance_exists(obj_crop) && keyboard_check_pressed(ord("G"))) {
-	with(obj_crop) {
-		growCrop(true)
-	}
-}
