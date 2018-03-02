@@ -24,7 +24,7 @@ currentSeason = seasons.spring
 
 shouldDrawDaylight = false
 
-timePaused = true
+timePaused = false
 
 year = 1
 

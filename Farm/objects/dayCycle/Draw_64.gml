@@ -14,9 +14,18 @@ if(shouldDrawDaylight) { //are we inside or outside
 
 
 var c = c_yellow
-draw_text_color(10, 10, string(seconds), c, c, c, c, 1)
-draw_text_color(10, 30, string(minutes), c, c, c, c, 1)
-draw_text_color(10, 50, string(hours), c, c, c, c, 1)
-draw_text_color(10, 70, string(day), c, c, c, c, 1)
-draw_text_color(10, 90, string(currentSeason), c, c, c, c, 1)
-draw_text_color(10, 110, string(year), c, c, c, c, 1)
+draw_text_color(10, 10, string(floor(seconds)) + " Seconds", c, c, c, c, 1)
+draw_text_color(10, 30, string(floor(minutes)) + " Minutes", c, c, c, c, 1)
+draw_text_color(10, 50, string(floor(hours)) + " Hours", c, c, c, c, 1)
+draw_text_color(10, 70, string(day) + " Day", c, c, c, c, 1)
+draw_text_color(10, 90, string(year) + " Year", c, c, c, c, 1)
+
+if(currentSeason == seasons.fall) {
+	draw_text_color(10, 110, "Fall" , c, c, c, c, 1)	
+} else if(currentSeason == seasons.spring) {
+	draw_text_color(10, 110, "Spring" , c, c, c, c, 1)	
+} else if(currentSeason == seasons.summer) {
+	draw_text_color(10, 110, "Summer" , c, c, c, c, 1)	
+} else if(currentSeason == seasons.winter) {
+	draw_text_color(10, 110, "Winter" , c, c, c, c, 1)	
+}
