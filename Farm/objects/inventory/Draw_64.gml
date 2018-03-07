@@ -37,7 +37,25 @@ repeat(inv_slots) {
 	
 	//draw slot and item
 	draw_sprite_part_ext(spr_ui, 0, 0, 0, cellSize, cellSize, xx, yy, scale, scale, c_white, 1) //draw the slot
-	if(i_item > 0) draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cellSize, cellSize, xx, yy, scale, scale, c_white, 1) //draw the item
+	
+	switch(ii) {
+		case selected_slot:
+			if(i_item > 0) draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cellSize, cellSize, xx, yy, scale, scale, c_white, 1) //draw the item
+			
+			gpu_set_blendmode(bm_add)
+			draw_sprite_part_ext(spr_ui, 0, 0, 0, cellSize, cellSize, xx, yy, scale, scale, c_white, 0.3) //draw the slot
+			gpu_set_blendmode(bm_normal)
+			break;
+			
+		case pickup_slot:
+			if(i_item > 0) draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cellSize, cellSize, xx, yy, scale, scale, c_white, 0.2) //draw the item
+			break;
+		
+		default:
+			if(i_item > 0) draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cellSize, cellSize, xx, yy, scale, scale, c_white, 1) //draw the item
+			break;
+	}
+	
 
 	
 	//draw item number
@@ -50,4 +68,14 @@ repeat(inv_slots) {
 	ii += 1
 	ix = ii mod inv_slot_width
 	iy = ii div inv_slot_width
+}
+
+if(pickup_slot != -1) {
+	i_item = inv_grid[# 0, pickup_slot]
+	sx = (i_item mod spr_inv_items_columns) * cellSize
+	sy = (i_item div spr_inv_items_columns) * cellSize
+	draw_sprite_part_ext(spr_inv_items, 0, sx, sy, cellSize, cellSize, mousex, mousey, scale, scale, c_white, 1) //draw the item
+	
+	var itemNumber = inv_grid[# 1, pickup_slot]
+	draw_text_color(mousex + (cellSize * scale * 0.5), mousey, string(itemNumber), c, c, c, c, 1)
 }

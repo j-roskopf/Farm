@@ -10,6 +10,11 @@ inv_slots = 17 // total amount of slots
 inv_slot_width = 8
 inv_slot_height = 3
 
+selected_slot = 0
+pickup_slot = -1
+m_slotx = 0
+m_sloty = 0
+
 x_buffer = 2
 y_buffer = 4
 
