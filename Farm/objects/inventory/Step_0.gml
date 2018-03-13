@@ -37,6 +37,7 @@ selected_slot = min(m_slotx + (m_sloty * inv_slot_width), inv_slots - 1)
 var inv_grid = ds_inventory
 var selectedSlotItem = inv_grid[# 0, selected_slot]
 
+#region //placing it in inventory
 if(pickup_slot != -1) {
 	if(mouse_check_button_pressed(mb_left)) {
 		if(selectedSlotItem == items.none) {
@@ -71,7 +72,27 @@ if(pickup_slot != -1) {
 		}
 	}
 } else if(selectedSlotItem != items.none) {
+	//drop item into game worlkd
+	if(mouse_check_button_pressed(mb_middle)) {
+		inv_grid[# 1, selected_slot] -= 1
+		if(inv_grid[# 1, selected_slot] == 0) {
+			inv_grid[# 0, selected_slot] = items.none
+		}
+		
+		//create the item in the real world
+		var inst = instance_create_layer(obj_player.x, obj_player.y, "Instances", obj_item)
+		with(inst) {
+			itemNum = selectedSlotItem 
+			xFrame = itemNum mod (spr_width / cellSize)
+			yFrame = itemNum div (spr_width / cellSize)
+		}
+		show_debug_message("Dropped an item")
+	}
+	
+	
+	//drop pickup item into new slot
 	if(mouse_check_button_pressed(mb_right)) {
 		pickup_slot = selected_slot
 	}
 }
+#endregion

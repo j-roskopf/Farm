@@ -14,10 +14,9 @@ var yy = 0; with(par_depth_object) {
 	yy += 1
 }
 
-if(ds_grid_height(ds_depthGrid) != numberOfInstances) {
-	//sort the grid ascending order
-	ds_grid_sort(grid, 1, true)
-}
+//JOE NOTE MORE PERFOMANT WAY OF SORTING NOT EVERY DRAW EVENT
+//bug exists here if leaving the room
+ds_grid_sort(grid, 1, true)
 
 
 //loop through grid and draw all items

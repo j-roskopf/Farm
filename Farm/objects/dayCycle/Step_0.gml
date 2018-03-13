@@ -53,10 +53,7 @@ if(shouldDrawDaylight) {
 		var d2 = darks[ceil(dd)]
 		darkness = mergeNumber(d1, d2, dd - floor(dd))
 	}
-	#endregion
-
-	show_debug_message("max darkness and current darkness " + string(darkness) + " " + string(maxDarkness))
-	
+	#endregion	
 }
 
 #region //cycle check
