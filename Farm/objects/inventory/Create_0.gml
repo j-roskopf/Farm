@@ -38,6 +38,9 @@ player_info_y = (scale * 9) + inv_ui_y
 slots_x = player_info_x
 slots_y = inv_ui_y + (40 * scale)
 
+desc_x = player_info_x
+desc_y = inv_ui_y + (156 * scale) 
+
 //-------------- Player Info
 //0 - gold amt
 //1 - silver amt 
@@ -79,6 +82,54 @@ enum items {
 	mushroom = 16,
 	height = 17
 }
+
+#region //create item info
+ds_items_info = ds_grid_create(2, items.height)
+
+//item name
+ds_items_info[# 0, items.none] = "Nothing"
+ds_items_info[# 0, items.tomato] = "Tomato"
+ds_items_info[# 0, items.potato] = "Potato"
+ds_items_info[# 0, items.carrot] = "Carrot"
+ds_items_info[# 0, items.artichoke] = "Artichoke"
+ds_items_info[# 0, items.chili] = "Chili"
+ds_items_info[# 0, items.gourd] = "Gourd"
+ds_items_info[# 0, items.corn] = "Corn"
+ds_items_info[# 0, items.wood] = "Wood"
+ds_items_info[# 0, items.stone] = "Stone"
+ds_items_info[# 0, items.bucket] = "Bucket"
+ds_items_info[# 0, items.chair] = "Chair"
+ds_items_info[# 0, items.picture] = "Picture"
+ds_items_info[# 0, items.axe] = "Axe"
+ds_items_info[# 0, items.potion] = "Potion"
+ds_items_info[# 0, items.starfish] = "Starfish"
+ds_items_info[# 0, items.mushroom] = "Mushroom"
+ds_items_info[# 0, items.none] = "Height"
+
+ds_items_info[# 1, items.none] = "Nothing"
+ds_items_info[# 1, items.tomato] = "Tomatoes look good on pizza"
+ds_items_info[# 1, items.potato] = "Potatoes are great"
+ds_items_info[# 1, items.carrot] = "Carrots are good"
+ds_items_info[# 1, items.artichoke] = "Artichokes are gross"
+ds_items_info[# 1, items.chili] = "Chili cheese"
+ds_items_info[# 1, items.gourd] = "Gourdito crunch"
+ds_items_info[# 1, items.corn] = "Corn porn"
+ds_items_info[# 1, items.wood] = "Wood... hehe"
+ds_items_info[# 1, items.stone] = "Stone cold"
+ds_items_info[# 1, items.bucket] = "A bucket to drink stuff with..."
+ds_items_info[# 1, items.chair] = "A chair to sit on"
+ds_items_info[# 1, items.picture] = "What a good photograph"
+ds_items_info[# 1, items.axe] = "Axe for cutting"
+ds_items_info[# 1, items.potion] = "Potion for drinking"
+ds_items_info[# 1, items.starfish] = "Patrick!"
+ds_items_info[# 1, items.mushroom] = "A cool drug!"
+ds_items_info[# 1, items.none] = "Height"
+
+
+//item description
+
+
+#endregion
 
 var yy = 0; repeat(inv_slots) {
 	ds_inventory[# 0, yy] = irandom_range(1, items.height - 1)

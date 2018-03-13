@@ -17,6 +17,7 @@ var i_mousey = mousey - slots_y
 var nx = i_mousex div cell_xbuff
 var ny = i_mousey div cell_ybuff
 
+var mouse_in_inventory = true
 if(nx >= 0 && nx < inv_slot_width && ny >= 0 && ny < inv_slot_height) {
 	var sx = i_mousex - (nx * cell_xbuff)
 	var sy = i_mousey - (ny * cell_ybuff)
@@ -25,6 +26,9 @@ if(nx >= 0 && nx < inv_slot_width && ny >= 0 && ny < inv_slot_height) {
 		m_slotx = nx
 		m_sloty = ny
 	}
+} else {
+	//we are outside the inventory	
+	mouse_in_inventory = false
 }
 
 //set the selected slot to mouse psn
@@ -40,7 +44,27 @@ var selectedSlotItem = inv_grid[# 0, selected_slot]
 #region //placing it in inventory
 if(pickup_slot != -1) {
 	if(mouse_check_button_pressed(mb_left)) {
-		if(selectedSlotItem == items.none) {
+		if(!mouse_in_inventory) {
+			//drop item into game world	
+
+			var pitem = inv_grid[# 0, pickup_slot]
+			inv_grid[# 1, pickup_slot] -= 1
+			
+			//destory item if last one
+			if(inv_grid[# 1, pickup_slot] == 0) {
+				inv_grid[# 0, pickup_slot] = items.none
+				pickup_slot = -1
+			}
+		
+			//create the item in the real world
+			var inst = instance_create_layer(obj_player.x, obj_player.y, "Instances", obj_item)
+			with(inst) {
+				itemNum = pitem 
+				xFrame = itemNum mod (spr_width / cellSize)
+				yFrame = itemNum div (spr_width / cellSize)
+			}
+
+		} else if(selectedSlotItem == items.none) {
 			//change the content of the inv grid to be our picked up item
 			inv_grid[# 0, selected_slot] = inv_grid[# 0, pickup_slot]
 			inv_grid[# 1, selected_slot] = inv_grid[# 1, pickup_slot]

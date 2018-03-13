@@ -70,6 +70,17 @@ repeat(inv_slots) {
 	iy = ii div inv_slot_width
 }
 
+//draw item description
+var i_info = ds_items_info, description = ""
+i_item = inv_grid[# 0, selected_slot] //item type
+
+if(i_item > 0) {
+	draw_set_font(fnt_text_12)
+	description = i_info[# 0, i_item] + ". " + i_info[# 1, i_item]	
+	c = c_black
+	draw_text_ext_color(desc_x, desc_y, description, string_height("M"), inv_ui_x - (x_buffer * 2), c, c, c, c, 1)
+}
+
 if(pickup_slot != -1) {
 	i_item = inv_grid[# 0, pickup_slot]
 	sx = (i_item mod spr_inv_items_columns) * cellSize
